@@ -9,11 +9,11 @@ function parOuImpar(num) {
 	return <Text style={Padrao.ex}>{result}</Text>
 }
 
-export default props =>
+export default ({ route, navigation }) =>
 	<View>
 
 		{
-			parOuImpar(props.numero)
+			parOuImpar(route.params.numero)
 		}
 
 		{

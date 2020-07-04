@@ -2,14 +2,14 @@ import React from 'react'
 import { Text } from 'react-native'
 import Padrao from '../estilo/Padrao'
 
-const Inverter = props => {
-	const inv = props.texto.split('').reverse().join('')
+const Inverter = ({ route, navigation }) => {
+	const inv = route.params.texto.split('').reverse().join('')
 	return <Text style={Padrao.ex}>{inv}</Text>
 }
 
-const MegaSena = props => {
+const MegaSena = ({ route, navigation }) => {
 	const [min, max] = [1, 60]
-	const numeros = Array(props.numeros || 6).fill(0)
+	const numeros = Array(route.params.numeros || 6).fill(0)
 
 	for (let i = 0; i < numeros.length; i++) {
 		let novo = 0
